@@ -26,74 +26,116 @@ class MainTest {
 
     @Test
     void positiveRangeTest() {
-        assertEquals(15, Main.sumRange(1, 5));
+        int start = 1;
+        int end = 5;
+        int expected = 15;
+        assertEquals(expected, Main.sumRange(start, end));
     }
 
     @Test
     void reversedRangeTest() {
-        assertEquals(15, Main.sumRange(5, 1));
+        int start = 5;
+        int end = 1;
+        int expected = 15;
+        assertEquals(expected, Main.sumRange(start, end));
     }
 
     @Test
     void negativeToPositiveRangeTest() {
-        assertEquals(0, Main.sumRange(-3, 3));
+        int start = -3;
+        int end = 3;
+        int expected = 0;
+        assertEquals(expected, Main.sumRange(start, end));
     }
 
     @Test
     void singleNumberRangeTest() {
-        assertEquals(7, Main.sumRange(7, 7));
+        int start = 7;
+        int end = 7;
+        int expected = 7;
+        assertEquals(expected, Main.sumRange(start, end));
     }
 
     @Test
     void negativeRangeTest() {
-        assertEquals(-10, Main.sumRange(-4, -1));
+        int start = -4;
+        int end = -1;
+        int expected = -10;
+        assertEquals(expected, Main.sumRange(start, end));
     }
 
     @Test
     void largeRangeTest() {
-        assertEquals(5050, Main.sumRange(1, 100));
+        int start = 1;
+        int end = 100;
+        int expected = 5050;
+        assertEquals(expected, Main.sumRange(start, end));
     }
 
     // 2
 
     @Test
     void addPositiveIntegersTest() {
-        assertEquals(12, Main.add(5, 7));
+        int a = 5;
+        int b = 7;
+        int expected = 12;
+        assertEquals(expected, Main.add(a, b));
     }
 
     @Test
     void addZeroIntegersTest() {
-        assertEquals(0, Main.add(0, 0));
+        int a = 0;
+        int b = 0;
+        int expected = 0;
+        assertEquals(expected, Main.add(a, b));
     }
 
     @Test
     void addNegativeIntegersTest() {
-        assertEquals(-5, Main.add(-3, -2));
+        int a = -3;
+        int b = -2;
+        int expected = -5;
+        assertEquals(expected, Main.add(a, b));
     }
 
     @Test
     void addMixedIntegersTest() {
-        assertEquals(100, Main.add(50, 50));
+        int a = 50;
+        int b = 50;
+        int expected = 100;
+        assertEquals(expected, Main.add(a, b));
     }
 
     @Test
     void addStringsTest() {
-        assertEquals("Hello, World!", Main.add("Hello, ", "World!"));
+        String a = "Hello, ";
+        String b = "World!";
+        String expected = "Hello, World!";
+        assertEquals(expected, Main.add(a, b));
     }
 
     @Test
     void addStringWithNumbersTest() {
-        assertEquals("12345", Main.add("12", "345"));
+        String a = "12";
+        String b = "345";
+        String expected = "12345";
+        assertEquals(expected, Main.add(a, b));
     }
 
     @Test
     void addEmptyStringsTest() {
-        assertEquals("", Main.add("", ""));
+        String a = "";
+        String b = "";
+        String expected = "";
+        assertEquals(expected, Main.add(a, b));
     }
 
     @Test
     void addStringWithWhitespaceTest() {
-        assertEquals("Hello  World", Main.add("Hello", "  World"));
+        String a = "Hello";
+        String b = "  World";
+        String expected = "Hello  World";
+        assertEquals(expected, Main.add(a, b));
     }
 
     //3
@@ -101,25 +143,29 @@ class MainTest {
     @Test
     void validArrayTest() {
         int[] numbers = {1, 2, 3, 4, 5, 6};
-        assertEquals(6, Main.findMax(numbers));
+        int expected = 6;
+        assertEquals(expected, Main.findMax(numbers));
     }
 
     @Test
     void singleElementArrayTest() {
         int[] numbers = {10};
-        assertEquals(10, Main.findMax(numbers));
+        int expected = 10;
+        assertEquals(expected, Main.findMax(numbers));
     }
 
     @Test
     void equalElementsArrayTest() {
         int[] numbers = {7, 7, 7, 7};
-        assertEquals(7, Main.findMax(numbers));
+        int expected = 7;
+        assertEquals(expected, Main.findMax(numbers));
     }
 
     @Test
     void negativeNumbersArrayTest() {
         int[] numbers = {-5, -3, -1, -7};
-        assertEquals(-1, Main.findMax(numbers));
+        int expected = -1;
+        assertEquals(expected, Main.findMax(numbers));
     }
 
     @Test
@@ -137,150 +183,199 @@ class MainTest {
 
     @Test
     void positiveNumberFactorialTest() {
-        assertEquals(120, Main.getFactorial(5));
+        int input = 5;
+        int expected = 120;
+        assertEquals(expected, Main.getFactorial(input));
     }
 
     @Test
     void zeroFactorialTest() {
-        assertEquals(1, Main.getFactorial(0));
+        int input = 0;
+        int expected = 1;
+        assertEquals(expected, Main.getFactorial(input));
     }
 
     @Test
     void oneFactorialTest() {
-        assertEquals(1, Main.getFactorial(1));
+        int input = 1;
+        int expected = 1;
+        assertEquals(expected, Main.getFactorial(input));
     }
 
     @Test
     void largeNumberFactorialTest() {
-        assertEquals(3628800, Main.getFactorial(10));
+        int input = 10;
+        int expected = 3628800;
+        assertEquals(expected, Main.getFactorial(input));
     }
 
     @Test
     void negativeNumberFactorialTest() {
-        assertThrows(IllegalArgumentException.class, () -> Main.getFactorial(-5));
+        int input = -5;
+        assertThrows(IllegalArgumentException.class, () -> Main.getFactorial(input));
     }
 
     //5
 
     @Test
     void calculateCircleAreaTest() {
-        double expectedArea = Math.PI * 5 * 5;
-        assertEquals(expectedArea, Main.calculateArea(5));
-    }
-
-    @Test
-    void calculateCircleAreaNegativeRadiusTest() {
-        assertThrows(IllegalArgumentException.class, () -> Main.calculateArea(-5));
+        double radius = 5.0;
+        double expectedArea = Math.PI * radius * radius;
+        assertEquals(expectedArea, Main.calculateArea(radius));
     }
 
     @Test
     void calculateCircleAreaZeroRadiusTest() {
-        assertEquals(0, Main.calculateArea(0));
+        double radius = 0.0;
+        double expectedArea = 0.0;
+        assertEquals(expectedArea, Main.calculateArea(radius));
+    }
+
+    @Test
+    void calculateCircleAreaNegativeRadiusTest() {
+        double radius = -5.0;
+        assertThrows(IllegalArgumentException.class, () -> Main.calculateArea(radius));
     }
 
     @Test
     void calculateRectangleAreaTest() {
-        assertEquals(45, Main.calculateArea(15, 3));
-    }
-
-    @Test
-    void calculateRectangleAreaNegativeLengthTest() {
-        assertThrows(IllegalArgumentException.class, () -> Main.calculateArea(-10, 4));
-    }
-
-    @Test
-    void calculateRectangleAreaNegativeWidthTest() {
-        assertThrows(IllegalArgumentException.class, () -> Main.calculateArea(10, -4));
+        double length = 15;
+        double width = 3;
+        double expectedArea = 45;
+        assertEquals(expectedArea, Main.calculateArea(length, width));
     }
 
     @Test
     void calculateRectangleAreaZeroLengthTest() {
-        assertEquals(0, Main.calculateArea(0, 5));
+        double length = 0;
+        double width = 5;
+        double expectedArea = 0;
+        assertEquals(expectedArea, Main.calculateArea(length, width));
     }
 
     @Test
     void calculateRectangleAreaZeroWidthTest() {
-        assertEquals(0, Main.calculateArea(5, 0));
+        double length = 5;
+        double width = 0;
+        double expectedArea = 0;
+        assertEquals(expectedArea, Main.calculateArea(length, width));
+    }
+
+    @Test
+    void calculateRectangleAreaNegativeLengthTest() {
+        double length = -10;
+        double width = 4;
+        assertThrows(IllegalArgumentException.class, () -> Main.calculateArea(length, width));
+    }
+
+    @Test
+    void calculateRectangleAreaNegativeWidthTest() {
+        double length = 10;
+        double width = -4;
+        assertThrows(IllegalArgumentException.class, () -> Main.calculateArea(length, width));
     }
 
     //6
 
     @Test
     void calculateAveragePositiveNumbersTest() {
-        int expectedAverage = (4 + 7 + 10) / 3;
-        assertEquals(expectedAverage, Main.calculateAverage(4, 7, 10));
+        int a = 4, b = 7, c = 10;
+        int expectedAverage = (a + b + c) / 3;
+        assertEquals(expectedAverage, Main.calculateAverage(a, b, c));
     }
 
     @Test
     void calculateAverageNegativeNumbersTest() {
-        int expectedAverage = (-4 + -7 + -10) / 3;
-        assertEquals(expectedAverage, Main.calculateAverage(-4, -7, -10));
+        int a = -4, b = -7, c = -10;
+        int expectedAverage = (a + b + c) / 3;
+        assertEquals(expectedAverage, Main.calculateAverage(a, b, c));
     }
 
     @Test
     void calculateAverageMixedNumbersTest() {
-        int expectedAverage = (4 + -7 + 10) / 3;
-        assertEquals(expectedAverage, Main.calculateAverage(4, -7, 10));
+        int a = 4, b = -7, c = 10;
+        int expectedAverage = (a + b + c) / 3;
+        assertEquals(expectedAverage, Main.calculateAverage(a, b, c));
     }
 
     @Test
     void calculateAverageSameNumbersTest() {
-        int expectedAverage = (5 + 5 + 5) / 3;
-        assertEquals(expectedAverage, Main.calculateAverage(5, 5, 5));
+        int a = 5, b = 5, c = 5;
+        int expectedAverage = 5;
+        assertEquals(expectedAverage, Main.calculateAverage(a, b, c));
     }
 
     @Test
     void calculateAverageZerosTest() {
-        int expectedAverage = (0 + 0 + 0) / 3;
-        assertEquals(expectedAverage, Main.calculateAverage(0, 0, 0));
+        int a = 0, b = 0, c = 0;
+        int expectedAverage = 0;
+        assertEquals(expectedAverage, Main.calculateAverage(a, b, c));
     }
 
     @Test
     void calculateAverageLargeNumbersTest() {
-        int expectedAverage = (1000000 + 2000000 + 3000000) / 3;
-        assertEquals(expectedAverage, Main.calculateAverage(1000000, 2000000, 3000000));
+        int a = 1000000, b = 2000000, c = 3000000;
+        int expectedAverage = (a + b + c) / 3;
+        assertEquals(expectedAverage, Main.calculateAverage(a, b, c));
     }
 
     //7
 
     @Test
     void calculateHypotenuseValidIntegersTest() {
-        assertEquals(10.0, Main.calculateHypotenuse(6, 8));
+        double a = 6;
+        double b = 8;
+        double expected = 10.0;
+        assertEquals(expected, Main.calculateHypotenuse(a, b));
     }
 
     @Test
     void calculateHypotenuseValidDoublesTest() {
-        assertEquals(7.905694150420948, Main.calculateHypotenuse(4.5, 6.5));
+        double a = 4.5;
+        double b = 6.5;
+        double expected = Math.sqrt(a * a + b * b);
+        assertEquals(expected, Main.calculateHypotenuse(a, b));
     }
 
     @Test
     void calculateHypotenuseNegativeValuesTest() {
-        assertThrows(IllegalArgumentException.class, () -> Main.calculateHypotenuse(-3, -4));
+        double a = -3.0;
+        double b = -4.0;
+        assertThrows(IllegalArgumentException.class, () -> Main.calculateHypotenuse(a, b));
     }
 
     @Test
     void calculateHypotenuseNegativeValueATest() {
-        assertThrows(IllegalArgumentException.class, () -> Main.calculateHypotenuse(-3, 4));
+        double a = -3.0;
+        double b = 4.0;
+        assertThrows(IllegalArgumentException.class, () -> Main.calculateHypotenuse(a, b));
     }
 
     @Test
     void calculateHypotenuseNegativeValueBTest() {
-        assertThrows(IllegalArgumentException.class, () -> Main.calculateHypotenuse(3, -4));
+        double a = 3.0;
+        double b = -4.0;
+        assertThrows(IllegalArgumentException.class, () -> Main.calculateHypotenuse(a, b));
     }
 
     @Test
     void calculateHypotenuseZeroValuesTest() {
-        assertThrows(IllegalArgumentException.class, () -> Main.calculateHypotenuse(0, 0));
+        double a = 0.0;
+        double b = 0.0;
+        assertThrows(IllegalArgumentException.class, () -> Main.calculateHypotenuse(a, b));
     }
 
     @Test
     void calculateHypotenuseZeroValueATest() {
-        assertThrows(IllegalArgumentException.class, () -> Main.calculateHypotenuse(0, 4));
+        double a = 0.0;
+        double b = 4.0;
+        assertThrows(IllegalArgumentException.class, () -> Main.calculateHypotenuse(a, b));
     }
 
     @Test
     void calculateHypotenuseZeroValueBTest() {
-        assertThrows(IllegalArgumentException.class, () -> Main.calculateHypotenuse(3, 0));
-
+        double a = 3.0;
+        double b = 0.0;
+        assertThrows(IllegalArgumentException.class, () -> Main.calculateHypotenuse(a, b));
     }
 }
