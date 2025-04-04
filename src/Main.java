@@ -120,7 +120,6 @@ public class Main {
      * 1.  Создайте метод sumRange, который принимает два числа (начало и конец диапазона)
      *     и возвращает сумму всех чисел между ними (включительно).
      */
-
     public static int sumRange(int startNum, int endNum) {
         int sum = 0;
         for (int i = Math.min(startNum, endNum); i <= Math.max(startNum, endNum); i++) {
@@ -171,7 +170,6 @@ public class Main {
      * 5 Создайте перегруженные методы calculateArea: Для круга (принимает радиус);
      * Для прямоугольника (принимает длину и ширину).
      */
-
     public static double calculateArea(double radius) {
         if (radius < 0) {
             throw new IllegalArgumentException("Радиус не может быть отрицательным");
@@ -196,7 +194,6 @@ public class Main {
      * 7 Напишите метод, который принимает два числа, представляющие длины катетов,
      * и возвращает длину гипотенузы (используйте теорему Пифагора).
      */
-
     public static double calculateHypotenuse(double a, double b) {
         if (a <= 0 || b <= 0) {
             throw new IllegalArgumentException("Длина катета должна быть больше нуля.");
